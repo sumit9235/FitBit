@@ -1,22 +1,23 @@
 // Navigation.js
+
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import UserProfileScreen from '../components/UserProfileScreen';
+import ProgressTrackingScreen from '../components/ProgressTrackingScreen'; // Import your ProgressTrackingScreen
 import FitnessGoalsScreen from '../components/FitnessGoalsScreen';
-import ActivityLoggingScreen from '../components/ActivityLoggingScreen';
-import ProgressTrackingScreen from '../components/ProgressTrackingScreen';
+import UserProfileScreen from '../components/UserProileScreen';
+import WorkoutLogScreen from '../components/HandelGoalsScreen';
 
 const Stack = createStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="UserProfile">
-        <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+      <Stack.Navigator initialRouteName="UserProfileScreen">
+        <Stack.Screen name="UserProfileScreen" component={UserProfileScreen} />
         <Stack.Screen name="FitnessGoals" component={FitnessGoalsScreen} />
-        <Stack.Screen name="ActivityLogging" component={ActivityLoggingScreen} />
         <Stack.Screen name="ProgressTracking" component={ProgressTrackingScreen} />
+        <Stack.Screen name="HandelGoals" component={WorkoutLogScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
